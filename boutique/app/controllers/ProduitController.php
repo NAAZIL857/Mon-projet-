@@ -141,17 +141,34 @@ class ProduitController {
             throw new Exception("Fichier trop volumineux");
         }
         
-        // Créer le dossier s'il n'existe pas
-        if (!is_dir(UPLOAD_PATH)) {
-            mkdir(UPLOAD_PATH, 0777, true);
-        }
+        // Upload sur Cloudinary
+        $cloudName = getenv('CLOUDINARY_CLOUD_NAME') ?: 'dmg6dsg0z';
+        $apiKey = getenv('CLOUDINARY_API_KEY') ?: '437233675576145';
+        $apiSecret = getenv('CLOUDINARY_API_SECRET') ?: 'tz1AnNsqU2v8aykotsMQ-xHGgWc';
         
-        $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
-        $filename = uniqid() . '.' . $extension;
-        $destination = UPLOAD_PATH . $filename;
+        $timestamp = time();
+        $publicId = 'boutique/' . uniqid();
+        $signature = sha1("public_id={$publicId}&timestamp={$timestamp}{$apiSecret}");
         
-        if (move_uploaded_file($file['tmp_name'], $destination)) {
-            return $filename;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://api.cloudinary.com/v1_1/{$cloudName}/image/upload");
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, [
+            'file' => new CURLFile($file['tmp_name']),
+            'public_id' => $publicId,
+            'timestamp' => $timestamp,
+            'api_key' => $apiKey,
+            'signature' => $signature
+        ]);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        
+        if ($httpCode === 200) {
+            $result = json_decode($response, true);
+            return $result['secure_url'];
         }
         
         throw new Exception("Erreur lors de l'upload");

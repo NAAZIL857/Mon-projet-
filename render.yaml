@@ -15,3 +15,9 @@ services:
         value: "441098"
       - key: DB_PASS
         value: Nanzibac2k23
+      - key: CLOUDINARY_CLOUD_NAME
+        value: dmg6dsg0z
+      - key: CLOUDINARY_API_KEY
+        value: "437233675576145"
+      - key: CLOUDINARY_API_SECRET
+        value: tz1AnNsqU2v8aykotsMQ-xHGgWc
