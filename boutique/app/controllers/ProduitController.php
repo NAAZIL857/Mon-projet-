@@ -141,6 +141,11 @@ class ProduitController {
             throw new Exception("Fichier trop volumineux");
         }
         
+        // Créer le dossier s'il n'existe pas
+        if (!is_dir(UPLOAD_PATH)) {
+            mkdir(UPLOAD_PATH, 0777, true);
+        }
+        
         $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
         $filename = uniqid() . '.' . $extension;
         $destination = UPLOAD_PATH . $filename;

@@ -9,9 +9,13 @@ RUN a2enmod rewrite
 # Copie des fichiers de l'application
 COPY boutique/ /var/www/html/
 
+# Création du dossier images
+RUN mkdir -p /var/www/html/public/images
+
 # Configuration des permissions
 RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html
+    && chmod -R 755 /var/www/html \
+    && chmod -R 777 /var/www/html/public/images
 
 # Configuration Apache pour le répertoire public
 RUN sed -i 's!/var/www/html!/var/www/html!g' /etc/apache2/sites-available/000-default.conf
