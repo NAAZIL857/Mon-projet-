@@ -13,7 +13,7 @@ define('DB_PASS', getenv('DB_PASS') ?: 'Nanzibac2k23');
 // Configuration de l'application
 define('BASE_URL', getenv('RENDER_EXTERNAL_URL') ? getenv('RENDER_EXTERNAL_URL') . '/' : '/');
 define('UPLOAD_PATH', __DIR__ . '/public/images/');
-define('UPLOAD_URL', BASE_URL . 'images/');
+define('UPLOAD_URL', BASE_URL . 'public/images/');
 define('CURRENCY', 'FCFA');
 
 // Sécurité

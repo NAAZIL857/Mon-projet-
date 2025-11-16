@@ -1,0 +1,7 @@
+# Permettre l'accès aux images
+<IfModule mod_rewrite.c>
+    RewriteEngine Off
+</IfModule>
+
+# Autoriser l'accès aux fichiers statiques
+Options +Indexes
