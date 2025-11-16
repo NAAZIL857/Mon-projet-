@@ -1,0 +1,21 @@
+# Fichiers de configuration sensibles
+config.php
+
+# Dossiers de dépendances
+vendor/
+node_modules/
+
+# Images uploadées
+boutique/public/images/*
+!boutique/public/images/.gitkeep
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
