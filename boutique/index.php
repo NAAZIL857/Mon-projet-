@@ -4,8 +4,12 @@
  * Initialise l'environnement et route les requêtes
  */
 
-// Chargement de la configuration
-require_once 'config.php';
+// Chargement de la configuration selon l'environnement
+if (getenv('RENDER')) {
+    require_once 'config.production.php';
+} else {
+    require_once 'config.php';
+}
 
 // Chargement des classes core
 require_once 'app/core/Database.php';

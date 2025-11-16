@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: gabonshop
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DB_HOST
+        value: mysql-nanziibrahim.alwaysdata.net
+      - key: DB_NAME
+        value: nanziibrahim_gabonshop
+      - key: DB_USER
+        value: "441098"
+      - key: DB_PASS
+        value: Nanzibac2k23
