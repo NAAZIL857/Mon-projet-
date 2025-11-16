@@ -5,6 +5,8 @@ services:
     plan: free
     dockerfilePath: ./Dockerfile
     envVars:
+      - key: RENDER
+        value: "true"
       - key: DB_HOST
         value: mysql-nanziibrahim.alwaysdata.net
       - key: DB_NAME
