@@ -345,22 +345,24 @@ footer {
 
 /* Product Card */
 .product-card {
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    border: 2px solid var(--primary-color); /* Blue border */
-    border-radius: 0.75rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid #0d6efd;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.2);
+    background: #fff;
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(13, 110, 253, 0.4);
+    border-color: #0b5ed7;
 }
 
 .product-card .card-img-top {
-    height: 200px;
+    height: 220px;
     object-fit: cover;
-    border-bottom: 1px solid var(--primary-color); /* Blue border for image bottom */
+    border-bottom: 3px solid #0d6efd;
 }
 
 .product-card .card-title {
