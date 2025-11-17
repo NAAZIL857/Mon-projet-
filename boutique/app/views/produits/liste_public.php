@@ -3,6 +3,14 @@ $title = "Bienvenue chez Gaboshop";
 ob_start();
 ?>
 
+<!-- Message de bienvenue -->
+<div class="alert alert-primary text-center mb-4 shadow-sm" role="alert" style="border-left: 5px solid #0d6efd;">
+    <h3 class="alert-heading mb-3">
+        <i class="fas fa-hand-sparkles"></i> Bienvenue sur Gaboshop !
+    </h3>
+    <p class="mb-0 fs-5">Votre boutique en ligne de confiance pour tous vos achats</p>
+</div>
+
 <?php if (Session::isLoggedIn()): ?>
     <div class="alert alert-success text-center mb-4" role="alert">
         <h4 class="alert-heading">Bienvenue <?= htmlspecialchars(Session::get('user_name')) ?> !</h4>
