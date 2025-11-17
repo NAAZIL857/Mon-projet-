@@ -17,7 +17,9 @@ ob_start();
     <div class="container">
         <h1 class="display-4">Bienvenue chez Gaboshop</h1>
         <p class="lead">Découvrez nos produits exceptionnels et trouvez ce que vous cherchez.</p>
-        <a href="#produits" class="btn btn-light btn-lg">Voir les produits</a>
+        <a href="#produits" class="btn btn-voir-produit btn-lg">
+            <i class="fas fa-arrow-down"></i> Voir les produits
+        </a>
     </div>
 </div>
 
