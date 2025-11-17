@@ -13,8 +13,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary custom-navbar">
         <div class="container">
-            <a class="navbar-brand" href="<?= BASE_URL ?>">
-                <img src="<?= BASE_URL ?>images/logo.jpg" alt="Ma Boutique Logo" class="navbar-logo">
+            <a class="navbar-brand fw-bold fs-4" href="<?= BASE_URL ?>">
+                <i class="fas fa-store"></i> GabonShop
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -107,11 +107,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h5>Ma Boutique</h5>
+                    <h5>GabonShop</h5>
                     <p>Votre boutique en ligne de confiance</p>
                 </div>
                 <div class="col-md-6 text-end">
-                    <p>&copy; 2025 Ma Boutique. Tous droits réservés.</p>
+                    <p>&copy; 2025 GabonShop. Tous droits réservés.</p>
                 </div>
             </div>
         </div>
